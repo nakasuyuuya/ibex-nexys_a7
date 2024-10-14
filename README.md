@@ -2,7 +2,7 @@
 
 ![Ibex demo system block diagram](doc/IbexDemoSystemBlockDiagram.png "Ibex demo system block diagram with in the center an Ibex processor connected by a memory bus to the RAM, GPIO, SPI, UART and debug module. Switches, buttons and LEDs are connected to the GPIO. The LCD is driven by SPI. The UART is used for a serial console. Finally, the debug module is used to drive the JTAG.")
 
-This an example RISC-V SoC targeting the Arty-A7 FPGA board. It comprises the
+This an example RISC-V SoC targeting the NEXYS-A7 FPGA board. It comprises the
 [lowRISC Ibex core](https://www.github.com/lowrisc/ibex) along with the
 following features:
 
@@ -17,6 +17,15 @@ following features:
 Debug can be used via a USB connection to the Arty-A7 board. No external JTAG
 probe is required.
 
+![NEXYS A7](doc/nexys-a7.png "NEXYS A7's pictre")
+
+```bash
+# vivado lunch
+# In my env. please change vivado source
+source /opt/xilinx/Vivado/2022.2/settings64.sh
+vivado &
+```
+
 ```bash
 # Look in /dev to see available ttyUSB devices
 screen /dev/ttyUSB1 115200
@@ -25,5 +34,7 @@ screen /dev/ttyUSB1 115200
 ```bash
 ./util/load_demo_system.sh run ./program/build/demo/hello_world/demo
 ```
+
+
 
 
